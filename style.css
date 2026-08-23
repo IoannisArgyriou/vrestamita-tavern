@@ -1,3 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -17,6 +25,8 @@ h3 {
 a, p {
     font-family: "Source Sans 3", sans-serif;
 }
+
+/* NAVIGATION */
 
 .nav-container {
     width: 100%;
@@ -76,8 +86,10 @@ li a:hover {
 .nav-container .btn:hover {
     background-color: rgba(0, 0, 0, 0.7);
     color: #F5E6CC;
-    /* text-decoration: underline; */
+
 }
+
+/* HERO SECTION */
 
 #hero{
     position: relative;
@@ -136,6 +148,8 @@ li a:hover {
     text-decoration: none;
 }
 
+/* ABOUT SECTION */
+
 .about-container {
     display: flex;
     flex-direction: row;
@@ -146,14 +160,17 @@ li a:hover {
    
 
 }
-.about-image, .about-text {
+.about-image {
     width: 50%;
     padding: 0 3rem;
 }
 
-.about-text{
-    padding: 0 9rem;
+.about-text {
+    width: 50%;
+    padding: 0 6rem;
 }
+
+
 
 .about-img {
     width: 100%;
@@ -177,6 +194,8 @@ li a:hover {
     margin-bottom: 1.5rem;
     color: #5C5248;
 }
+
+/* MENU SECTION */
 
 .menu-container {
     display: flex;
@@ -243,7 +262,7 @@ li a:hover {
     padding-bottom: 2rem;
     border-radius: 30px;
 }
-
+/* GALLERY SECTION */
 
 #gallery {
     display: flex;
@@ -285,6 +304,8 @@ li a:hover {
     transform: scale(1.03);
     
 }
+
+/* REVIEW SECTION */
 
 .reviews-container {
     display: flex;
@@ -335,7 +356,7 @@ i.fa-brands, i.fa-solid {
 .rating-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 70%;
+    width: 75%;
     gap: 5rem;
 }
 
@@ -348,15 +369,12 @@ i.fa-brands, i.fa-solid {
 .card {
     display: flex;
     flex-direction: column;
-
-    margin-top: 3rem;
+    margin: 3rem auto;
     padding: 2.5rem 4rem 0.5rem;
     background-color: #F3EBDE;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     border-radius: 10px
 }
-
-
 
 .reviewer {
     font-weight: 700;
@@ -370,6 +388,8 @@ i.fa-brands, i.fa-solid {
     margin-top: auto;
     gap: 0.8rem;
 }
+
+/* CONTACT SECTION */
 
 .contact-container {
     display: flex;
@@ -446,10 +466,11 @@ iframe {
     font-weight: 800;
 }
 
+/* FOOTER */
+
 footer {
     background-color: #2F2923;
     margin: 0;
-    padding-top: 1rem;;
     align-content: center;;
     color: #FAF6F0;
 }
@@ -458,38 +479,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center; 
-}
-
-.f-social {
-    display: flex;
-    padding: 1rem;
-    flex-direction: row;
-    gap: 2rem;
-}
-
-.f-social .fa-solid,.f-social .fa-brands {
-    color:#FAF6F0; 
-}
-
-.roadmap {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-}
-
-.roadmap p {
-    font-weight: 800;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.roadmap ul {
-    padding: 0;
-}
-
-.roadmap a {
-    text-decoration: none;
-    color: #FAF6F0;
 }
 
 hr {
@@ -501,4 +490,59 @@ hr {
     text-decoration: none;
     color:#fff;
     font-weight: 700;
+}
+
+@media(max-width: 1600px) {
+
+    /* navigation */
+
+     .right-nav, .right-nav ul {
+        gap: 1.2rem;
+    }
+
+    .logo-img {
+        height: 8.7rem;
+    }
+
+    /* hero section */ 
+
+    .hero-content {
+        padding-left: 7rem;
+    }
+
+
+    .hero-btn {
+        padding: 1.2rem 1.8rem;
+        font-size: 1.2rem;
+    }
+
+    /* about section */
+    .about-image {
+        width: 55%;
+    }
+
+    .about-text 
+    {
+        width: 45%;
+        padding: 0 2rem;
+    }
+
+    /* reviews section */
+
+    .rating-cards {
+        width: 80%;
+    }
+
+
+
+    /* contact section */
+
+    .links {
+        gap: 2rem;
+    }
+
+    .working-hours{
+        width: 75%;
+        margin: 3rem auto;
+    }
 }
