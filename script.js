@@ -3,6 +3,7 @@ const burgerIcon = document.querySelector(".burger-icon");
 const bMenu = document.querySelector("#b-menu");
 const menuIcon = document.querySelector(".burger-icon i");
 const menuLinks = document.querySelectorAll("#b-menu a");
+let lastScrollY = window.scrollY;
 
 burgerIcon.addEventListener("click", () => {
     bMenu.classList.toggle("active");
@@ -30,10 +31,22 @@ window.addEventListener("scroll", ()=> {
     if(window.scrollY > 50) {
         bNav.classList.add("scrolled");
         navCon.classList.add("scrolled");
+
+        if(window.scrollY > lastScrollY) {
+            //wen scrolling down
+            navCon.classList.add("hidden");
+        } else {
+            //when scrolling up
+            navCon.classList.remove("hidden");
+        }
     } else {
         bNav.classList.remove("scrolled");
         navCon.classList.remove("scrolled");
+
+        bNav.classList.remove("hidden");
+        navCon.classList.remove("hidden");
     }
+    lastScrollY = window.scrollY;
 });
 
 window.addEventListener("resize", ()=> {

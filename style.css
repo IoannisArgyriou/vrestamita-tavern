@@ -44,12 +44,13 @@ a, p {
     align-items: center;
     position: absolute;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
-    transition: all 0.4s normal;
+    transition: transform 0.4s ease, height 0.4s ease, background 0.4s ease;
+    z-index: 1000;
 }
 
 .nav-container.scrolled {
     position: fixed;
-    background:#3B2F2F;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
     height: 5rem;
     padding: 0 2rem;
     justify-content:  space-between;
@@ -62,6 +63,11 @@ a, p {
 .nav-container.scrolled .right-nav {
    font-size: 1.3rem;
 }
+
+.nav-container.hidden {
+    transform: translateY(-100%);
+}
+
 
 .nav-container .btn {
     text-decoration: none;
@@ -621,7 +627,7 @@ hr {
 
         .informations {
             gap: 1rem;
-            width: 85%;
+            width: 100%;
         }
 
         iframe {
@@ -651,16 +657,21 @@ hr {
 
             /* nav-hero section */
 
+            .nav-container {
+                padding: 0 1rem;
+                justify-content: center;
+            }
+
             .logo-img{ 
-                height: 7.5rem;
+                height: 7rem;
             }
 
             .right-nav, .nav-container .btn {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
 
             .right-nav ul {
-                gap: 2rem;
+                gap: 1rem;
             }
 
             /* menu section */
@@ -686,14 +697,25 @@ hr {
                 font-size: 1rem;
             }
 
+            /* contact section */
+
+            iframe {
+            border-radius: 25px;  
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+            margin: 2rem;
+            width: 450px;
+            height: 300px;
+        }
+
         }
         
-        @media (max-width: 1100px) {
+        @media (max-width: 1024px) {
             
             /* Burger Navigation */
 
             .nav-container {
                 display: none;
+                
             }
 
             .b-container {
@@ -715,7 +737,7 @@ hr {
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: row;
-                background-color: #3B2F2F;
+                background-color: #3B2F2f;
                 transition: height 0.4s ease; 
 
             }/* when scrolling */
@@ -795,6 +817,101 @@ hr {
                 background-color:#382a2a;
             }
 
-            
+            /* about section */
+
+            .about-text p{
+                font-size: 0.9rem;
+            }
+
+            /* review section */
+
+            .ratings {
+                width: 70%;
+            }
+
+            .card {
+                margin: 1.5rem auto;
+                padding: 1rem;
+            }
+
+            .rating-cards { 
+                gap: 3rem;
+            }
+
+            /* contact section */
+
+            .contact-info {
+                padding: 0 1rem;
+            }
                 }
+
+            @media (max-width: 850px) {
+
+                /* about section */
+
+                .about-container {
+                    flex-direction: column-reverse;
+                    gap: 1.5rem;
+                }
+
+                .about-image {
+                    width: 85%;
+                    padding-bottom: 2rem;
+                    margin: 0 auto;
+                    height: auto;
+                }
+
+                .about-text {
+                    width: 100%;
+                }
+
+                .about-text p {
+                    font-size: 1.5rem;
+                }
+
+
+                /* gallery section */
+
+                .gallery-container {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                .gallery-container img {
+                    grid-column: span 2;
+                }
+
+                .gallery-container img:last-child {
+                    grid-column: 2 / 4;
+                }
+            }
+
+             @media (max-width: 768px) {
+                /* contact section */ 
+
+                .contact-info {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1rem;
+                }
+
+                .links {
+                    width: 25%;
+                    margin: 0 auto;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+                
+                .informations {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                    padding-bottom: 2rem;
+                }
+
+                .contact-container {
+                    height: auto;
+                    min-height: 100vh;
+                }
+             }
+            
+                
     }
